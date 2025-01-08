@@ -3,7 +3,7 @@ import logo from "../assets/logo.png"
 
 const Navbar = () => {
   return (
-    <div className=' flex justify-between bg-white shadow-purple-600 shadow-lg'>
+    <div className=' flex justify-between bg-white shadow-purple-600 shadow-lg w-full h-full'>
       <NavLink to="/" className="w-16 ml-6 h-9 rounded-md"><img src={logo} alt='blogs'/></NavLink>
     <div className='flex gap-10 p-2 font-bold text-lg'>
         <NavLink to="/" className='bg-purple-500 rounded-lg w-32 p-2 text-center hover:bg-purple-300 hover:text-black text-white transition-all hover:scale-110 duration-200'>

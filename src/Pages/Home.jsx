@@ -1,9 +1,11 @@
-import React from 'react'
+import DisplayBlog from '../Components/DisplayBlog';
 // import Navbar from '../Components/Navbar'
 
 const Home = () => {
   return (
-    <div className='bg-purple-400 w-full h-full'> hiii  </div>
+    <div className='bg-purple-400'>
+        <DisplayBlog/>
+    </div>
   )
 }
 
