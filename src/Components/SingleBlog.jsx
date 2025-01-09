@@ -1,5 +1,4 @@
 import React from 'react'
-
 const SingleBlog = ({storedData}) => {
   // console.log("hiiii",storedData); 
   return (
@@ -9,6 +8,7 @@ const SingleBlog = ({storedData}) => {
         <img src={storedData.value.image} className='p-2 w-52 aspect-square shadow-lg shadow-purple-500'/>
         <p className='text-sm font-serif p-5 content-center text-purple-900  h-auto'>{storedData.value.BlogDescription}</p>
     </div>
+    
     </div>
 )
 }

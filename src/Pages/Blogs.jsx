@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import imagelogo from "../assets/cloud-computing.png"
 import Home from './Home';
 import DisplayBlog from '../Components/DisplayBlog';
+import { toast, ToastContainer } from 'react-toastify';
 
 const Blogs = () => {
   const [blogData,setblogData] = useState({
     blogTitle:"",
     BlogDescription:"",
-    image:"",
+    image:null,
   });
   
 function changeHandler(event){
@@ -22,10 +23,12 @@ function changeHandler(event){
     e.preventDefault()
     if(blogData.image && blogData.blogTitle && blogData.BlogDescription){
     localStorage.setItem(localStorage.length+1,JSON.stringify(blogData));
-    alert("data is stored in local storage");
-    
+    // alert("data is stored in local storage");
+    toast("data is Saved in localStorage");
+
   }else{
-    alert("All Fields Are Required")
+    toast("All FIels Are Required")
+    // alert("All Fields Are Required")
   }
 
     console.log(blogData);
@@ -49,6 +52,7 @@ function changeHandler(event){
 
   return (
     <div  className='mt-11' >
+     
       <form onSubmit={submitHandler} className='bg-purple-100 h-auto w-[45%] mx-auto flex flex-col rounded-lg'>
         <h1 className='text-purple-900 mt-4 text-xl font-bold mx-auto' >Add Your Blog Here !...</h1>
         <div className='flex gap-14 p-5'>
@@ -73,6 +77,7 @@ function changeHandler(event){
         {/* <img src={blogData.url} className='w-28 h-40'></img> */}
       </form>
       <DisplayBlog/>
+      <ToastContainer/>
     </div>
   )
 }
