@@ -25,7 +25,7 @@ const DisplayBlog = () => {
   return (
     <div className=''>
       {storedData.length === 0 ? (
-        <p className='w-96 text-7xl font-bold'>No blogs to display.</p>
+        <p className='w-auto text-7xl font-bold mx-auto p-10'>No blogs to display.</p>
       ) : (
         storedData.map((item, index) => (
           <SingleBlog key={index} storedData={item} />

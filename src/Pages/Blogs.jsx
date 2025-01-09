@@ -20,8 +20,14 @@ function changeHandler(event){
   
   function submitHandler(e){
     e.preventDefault()
+    if(blogData.image && blogData.blogTitle && blogData.BlogDescription){
     localStorage.setItem(localStorage.length+1,JSON.stringify(blogData));
     alert("data is stored in local storage");
+    
+  }else{
+    alert("All Fields Are Required")
+  }
+
     console.log(blogData);
   }
 
