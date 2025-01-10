@@ -21,6 +21,10 @@ const DisplayBlog = () => {
     // useEffect(()=>{
     //   console.log(storedData);
     // },[storedData])
+    const handleDelete = (keyToDelete) => {
+      localStorage.removeItem(keyToDelete); // Remove from localStorage
+      setStoredData((prev) => prev.filter((item) => item.key !== keyToDelete)); // Update state
+    };
 
   return (
     <div className=''>
@@ -28,7 +32,11 @@ const DisplayBlog = () => {
         <p className='w-auto text-7xl font-bold mx-auto p-10'>No blogs to display...</p>
       ) : (
         storedData.map((item, index) => (
-          <SingleBlog key={index} storedData={item} />
+          <SingleBlog 
+          storedData={item} 
+          key={item.key}
+          onDelete={() => handleDelete(item.key)}
+          />
         ))
       )}
     </div>  

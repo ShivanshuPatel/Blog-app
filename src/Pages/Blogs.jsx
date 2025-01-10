@@ -3,8 +3,11 @@ import imagelogo from "../assets/cloud-computing.png"
 import Home from './Home';
 import DisplayBlog from '../Components/DisplayBlog';
 import { toast, ToastContainer } from 'react-toastify';
+import { useSelector } from 'react-redux';
 
 const Blogs = () => {
+const theme = useSelector(state => state.theme);
+
   const [blogData,setblogData] = useState({
     blogTitle:"",
     BlogDescription:"",
@@ -22,7 +25,7 @@ function changeHandler(event){
   function submitHandler(e){
     e.preventDefault()
     if(blogData.image && blogData.blogTitle && blogData.BlogDescription){
-    localStorage.setItem(localStorage.length+1,JSON.stringify(blogData));
+    localStorage.setItem(blogData.blogTitle,JSON.stringify(blogData));
     // alert("data is stored in local storage");
     toast("data is Saved in localStorage");
 
@@ -51,9 +54,9 @@ function changeHandler(event){
 
 
   return (
-    <div  className='mt-11' >
-     
-      <form onSubmit={submitHandler} className='bg-purple-100 h-auto w-[45%] mx-auto flex flex-col rounded-lg'>
+    <div  className={`${theme === "dark" ? 'bg-slate-900' : "bg-purple-50"}`} >
+     {/* <div> */}
+      <form onSubmit={submitHandler} className={`bg-purple-100 h-auto w-[45%] mx-auto flex flex-col rounded-lg ${theme === "dark" ? 'bg-slate-900 border-2 border-white' : "bg-purple-50 border-2 border-purple-950"}`}>
         <h1 className='text-purple-900 mt-4 text-xl font-bold mx-auto' >Add Your Blog Here !...</h1>
         <div className='flex gap-14 p-5'>
           <label className='text-purple-900 font-bold mt-1'>Blog Title</label>
@@ -72,7 +75,7 @@ function changeHandler(event){
         </div> 
         
         <div className='mx-auto mb-8 mt-5'>
-          <button type='submit' className='bg-purple-500 rounded-lg p-2 w-32 text-center transition-all hover:scale-110 duration-200 hover:bg-purple-300  hover:text-black text-white font-bold shadow-lg shadow-black'>Add</button>
+          <button type='submit' className={`bg-purple-500 rounded-lg p-2 w-32 text-center transition-all hover:scale-110 duration-200 hover:bg-purple-300  hover:text-black text-white font-bold shadow-lg shadow-black ${theme === "dark" ? 'bg-slate-900 text-white' : "bg-white text-black"}`}>Add</button>
         </div>
         {/* <img src={blogData.url} className='w-28 h-40'></img> */}
       </form>

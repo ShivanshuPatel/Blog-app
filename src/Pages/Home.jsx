@@ -3,7 +3,7 @@ import DisplayBlog from '../Components/DisplayBlog';
 
 const Home = () => {
   return (
-    <div className='bg-purple-400'>
+    <div className=''>
         <DisplayBlog/>
     </div>
   )
