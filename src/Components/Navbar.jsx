@@ -25,7 +25,7 @@ const Navbar = () => {
       <NavLink to="/" className={`w-14 ml-6 mt-2 h-9 rounded-md ${themeState === "dark" ? 'bg-slate-900' : "bg-white"}`}><img src={logo} alt='blogs'/></NavLink>
     <div className='flex gap-10 p-2 font-bold text-lg'>
         <NavLink to="/" className={` rounded-lg w-32 p-2 text-center hover:bg-purple-300 hover:text-black  transition-all hover:scale-110 duration-200 ${themeState === "dark" ? 'bg-slate-900 text-white' : " text-black"}`}>
-            Home hii
+            Home
         </NavLink>
         
         <NavLink to="/Blogs" className={` rounded-lg w-32 p-2 text-center hover:bg-purple-300 transition-all hover:scale-110 duration-200 hover:text-black ${themeState === "dark" ? 'bg-slate-900 text-white' : " text-black"}`}>
