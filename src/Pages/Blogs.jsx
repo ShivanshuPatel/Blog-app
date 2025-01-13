@@ -75,7 +75,7 @@ function changeHandler(event){
         </div> 
         
         <div className='mx-auto mb-8 mt-5'>
-          <button type='submit' className={`bg-purple-500 rounded-lg p-2 w-32 text-center transition-all hover:scale-110 duration-200 hover:bg-purple-300  hover:text-black text-white font-bold shadow-lg shadow-black ${theme === "dark" ? 'bg-slate-900 text-white' : "bg-white text-black"}`}>Add</button>
+          <button type='submit' className={` rounded-lg p-2 w-32 text-center transition-all hover:scale-110 duration-200 hover:bg-purple-300  hover:text-black  font-bold shadow-lg shadow-black ${theme === "dark" ? 'bg-slate-900 text-white' : "text-black"}`}>Add</button>
         </div>
         {/* <img src={blogData.url} className='w-28 h-40'></img> */}
       </form>
